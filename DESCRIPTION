@@ -14,3 +14,5 @@ Imports:
     jsonlite,
     purrr,
     tibble
+URL: https://github.com/LeonBrueggemann/skillcornerR
+BugReports: https://github.com/LeonBrueggemann/skillcornerR/issues
