@@ -2,11 +2,11 @@
 #'
 #' Retrieves a data frame of competition editions from the SkillCorner API.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param lang Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
-#' @param user Logical or Character. Filters on authorization level of user. Default value: false
-#' @param component_permission_for Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
+#' @param lang Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
+#' @param user Filters on authorization level of user. Default value: false
+#' @param component_permission_for Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
 #' @return A \code{tibble} containing competition editions metadata.
 #' @export
@@ -82,11 +82,11 @@ get_skc_competition_editions <- function(username,
 #'
 #' Retrieves a data frame of competitions from the SkillCorner API.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param lang Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
-#' @param user Logical or Character. Filters on authorization level of user. Default value: false
-#' @param component_permission_for Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
+#' @param lang Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
+#' @param user Filters on authorization level of user. Default value: false
+#' @param component_permission_for Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
 #' @return A \code{tibble} containing competitions metadata.
 #' @export
@@ -162,12 +162,12 @@ get_skc_competitions <- function(username,
 #'
 #' Retrieves a data frame of editions for a specific competition ID from the SkillCorner API.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param competition_id Character or Integer. The ID of the targeted competition.
-#' @param lang Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
-#' @param user Logical or Character. Filters on authorization level of user. Default value: false
-#' @param component_permission_for Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
+#' @param competition_id The ID of the targeted competition.
+#' @param lang Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
+#' @param user Filters on authorization level of user. Default value: false
+#' @param component_permission_for Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
 #' @return A \code{tibble} containing specific competition editions metadata.
 #' @export
@@ -245,9 +245,9 @@ get_skc_editions <- function(username,
 #'
 #' Retrieves a data frame of rounds for a specific competition ID from the SkillCorner API.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param competition_id Character or Integer. The ID of the targeted competition.
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
+#' @param competition_id The ID of the targeted competition.
 #'
 #' @return A \code{tibble} containing rounds metadata.
 #' @export
@@ -313,9 +313,9 @@ get_skc_rounds <- function(username,
 #'
 #' Fetches raw unsimplified nested list data for a single specific match metadata from the SkillCorner API.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param match_id Character or Integer. The ID of the match.
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
+#' @param match_id The ID of the match.
 #'
 #' @return A nested \code{list} containing full structural match data.
 #' @export
@@ -363,29 +363,29 @@ get_skc_match <- function(username,
 #'
 #' Loops and extracts aggregated physical outputs filtering through optional metric dimensions.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param season Character or Numeric string filter. SkillCorner Season ID(s).
-#' @param competition Character or Numeric string filter. SkillCorner Competition ID(s).
-#' @param competition_edition Character or Numeric string filter. SkillCorner Competition Edition ID(s).
-#' @param match Character or Numeric string filter. SkillCorner Match ID(s).
-#' @param team Character or Numeric string filter. SkillCorner Team ID(s).
-#' @param player Character or Numeric string filter. SkillCorner Player ID(s).
-#' @param position Character filter. Player position acronym. Available values: LCB, CB, RCB, LWB, LB, RB, RWB, LDM, DM, RDM, LM, CM, RM, AM, LW, RW, LF, RF, CF
-#' @param position_group Character filter. Position group. Available values: CentralDefender, FullBack, Midfield, WideAttacker, CenterForward
-#' @param date__lte ISO date string format (<=). Match date before the date.
-#' @param date__gte ISO date string format (>=). Match date after the date.
-#' @param age__lte Numeric filter (<=). Exclude players older than this number.
-#' @param age__gte Numeric filter (>=). Exclude players younger than this number.
-#' @param playing_time__gte Numeric filter (>=). Exclude match-player on which player played less than this number (in minutes).
-#' @param count_match__gte Numeric filter (>=). Exclude metrics computed based on less than this number of player matches.
-#' @param results Character constraint. Result of the game. Available values: win, lose, draw
-#' @param venue Character constraint. home or/and away separated by comma.
-#' @param period Character constraint. full or/and h1 or/and h2 separated by comma.
-#' @param possession Character constraint. all or/and tip or/and otip separated by comma.
-#' @param physical_check_passed Logical string constraint. If physical_check_passed=true API returns only the performances that have passed the SkillCorner physical check. If physical_check_passed=false API returns only the performances that did not pass the SkillCorner physical check. If physical_check_passed=true,false returns all the performances.
-#' @param group_by Character query sorting groupings. Specify the aggregation level you want. Available values : player, match, team, position_group, position, season, competition
-#' @param order_by Character query ordering string. Order performances by a metric queried. Use '-' to order in descending order. Example: '-psv99' let you order by descending PSV-99
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
+#' @param season SkillCorner Season ID(s).
+#' @param competition SkillCorner Competition ID(s).
+#' @param competition_edition SkillCorner Competition Edition ID(s).
+#' @param match SkillCorner Match ID(s).
+#' @param team SkillCorner Team ID(s).
+#' @param player SkillCorner Player ID(s).
+#' @param position Player position acronym. Available values: LCB, CB, RCB, LWB, LB, RB, RWB, LDM, DM, RDM, LM, CM, RM, AM, LW, RW, LF, RF, CF
+#' @param position_group Position group. Available values: CentralDefender, FullBack, Midfield, WideAttacker, CenterForward
+#' @param date__lte Match date before the date.
+#' @param date__gte Match date after the date.
+#' @param age__lte Exclude players older than this number.
+#' @param age__gte Exclude players younger than this number.
+#' @param playing_time__gte Exclude match-player on which player played less than this number (in minutes).
+#' @param count_match__gte Exclude metrics computed based on less than this number of player matches.
+#' @param results Result of the game. Available values: win, lose, draw
+#' @param venue home or/and away separated by comma.
+#' @param period full or/and h1 or/and h2 separated by comma.
+#' @param possession all or/and tip or/and otip separated by comma.
+#' @param physical_check_passed If physical_check_passed=true API returns only the performances that have passed the SkillCorner physical check. If physical_check_passed=false API returns only the performances that did not pass the SkillCorner physical check. If physical_check_passed=true,false returns all the performances.
+#' @param group_by Specify the aggregation level you want. Available values : player, match, team, position_group, position, season, competition
+#' @param order_by Order performances by a metric queried. Use '-' to order in descending order. Example: '-psv99' let you order by descending PSV-99
 #' @param response_format Only JSON format allowed.
 #' @param average_per Specify the normalization we want to use to compute physical metrics. Available values: match, p90, p60bip, p30tip, p30otip.
 #'
@@ -499,11 +499,11 @@ get_skc_physical <- function(username,
 #'
 #' Extracts match dynamic events.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param match_id Character or Integer. The ID of the targeted match.
-#' @param ignore_dynamic_events_check Logical toggle setup constraints. WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.
-#' @param data_version Integer. default: 2
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
+#' @param match_id The ID of the targeted match.
+#' @param ignore_dynamic_events_check WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.
+#' @param data_version default: 2
 #'
 #' @return A structural parsed \code{data.frame}.
 #' @export
@@ -876,10 +876,10 @@ get_skc_dynamic_events_player_possessions <- function(username,
 #'
 #' Extracts full breadth match by match metrics datasets - Off Ball Runs
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
 #' @param include_metadata Whether to include metadata (e.g. names associated with IDs) in the response.
-#' @param match_id Character or Numeric string filter. SkillCorner Match ID.
+#' @param match_id SkillCorner Match ID.
 #'
 #' @return A metadata contextual log structured parsed evaluation data frame table pipeline.
 #' @export
@@ -1176,8 +1176,8 @@ get_skc_match_metrics_on_ball_engagements <- function(username,
 #'
 #' Pulls SkillCorner Tracking Data in large list format.
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
+#' @param username Your SkillCorner API username.
+#' @param password Your SkillCorner API password.
 #' @param file_format Must be jsonl.
 #' @param data_version Version of the data to download. Version 3 is the current version. Available values : 3
 #' @param match_id SkillCorner Match ID.
