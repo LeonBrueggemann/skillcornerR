@@ -32,35 +32,35 @@ get_skc_metrics_passes(
 )
 }
 \arguments{
-\item{username}{Character. Your SkillCorner API username.}
+\item{username}{Your SkillCorner API username.}
 
-\item{password}{Character. Your SkillCorner API password.}
+\item{password}{Your SkillCorner API password.}
 
-\item{season}{Character or Numeric string filter. SkillCorner Season ID(s).}
+\item{season}{SkillCorner Season ID(s).}
 
-\item{competition}{Character or Numeric string filter. SkillCorner Competition ID(s).}
+\item{competition}{SkillCorner Competition ID(s).}
 
-\item{competition_edition}{Character or Numeric string filter. SkillCorner Competition Edition ID(s).}
+\item{competition_edition}{SkillCorner Competition Edition ID(s).}
 
-\item{match}{Character or Numeric string filter. SkillCorner Match ID(s).}
+\item{match}{SkillCorner Match ID(s).}
 
-\item{team}{Character or Numeric string filter. SkillCorner Team ID(s).}
+\item{team}{SkillCorner Team ID(s).}
 
-\item{player}{Character or Numeric string filter. SkillCorner Player ID(s).}
+\item{player}{SkillCorner Player ID(s).}
 
-\item{position}{Character filter. Player position acronym. Available values: LCB, CB, RCB, LWB, LB, RB, RWB, LDM, DM, RDM, LM, CM, RM, AM, LW, RW, LF, RF, CF}
+\item{position}{Player position acronym. Available values: LCB, CB, RCB, LWB, LB, RB, RWB, LDM, DM, RDM, LM, CM, RM, AM, LW, RW, LF, RF, CF}
 
-\item{position_group}{Character filter. Position group. Available values: CentralDefender, FullBack, Midfield, WideAttacker, CenterForward}
+\item{position_group}{Position group. Available values: CentralDefender, FullBack, Midfield, WideAttacker, CenterForward}
 
-\item{date__lte}{ISO date string format (<=). Match date before the date.}
+\item{date__lte}{Match date before the date.}
 
-\item{date__gte}{ISO date string format (>=). Match date after the date.}
+\item{date__gte}{Match date after the date.}
 
-\item{age__lte}{Numeric filter (<=). Exclude players older than this number.}
+\item{age__lte}{Exclude players older than this number.}
 
-\item{age__gte}{Numeric filter (>=). Exclude players younger than this number.}
+\item{age__gte}{Exclude players younger than this number.}
 
-\item{playing_time__gte}{Numeric filter (>=). Exclude match-player on which player played less than this number (in minutes).}
+\item{playing_time__gte}{Exclude match-player on which player played less than this number (in minutes).}
 
 \item{playing_time__lte}{Numeric context constraint indicator boundary targets setup profile.}
 
@@ -68,13 +68,13 @@ get_skc_metrics_passes(
 
 \item{result}{Filter character results vectors context requirements constraints mapping.}
 
-\item{venue}{Character constraint. home or/and away separated by comma.}
+\item{venue}{home or/and away separated by comma.}
 
-\item{physical_check_passed}{Logical string constraint. If physical_check_passed=true API returns only the performances that have passed the SkillCorner physical check. If physical_check_passed=false API returns only the performances that did not pass the SkillCorner physical check. If physical_check_passed=true,false returns all the performances.}
+\item{physical_check_passed}{If physical_check_passed=true API returns only the performances that have passed the SkillCorner physical check. If physical_check_passed=false API returns only the performances that did not pass the SkillCorner physical check. If physical_check_passed=true,false returns all the performances.}
 
-\item{group_by}{Character query sorting groupings. Specify the aggregation level you want. Available values : player, match, team, position_group, position, season, competition}
+\item{group_by}{Specify the aggregation level you want. Available values : player, match, team, position_group, position, season, competition}
 
-\item{order_by}{Character query ordering string. Order performances by a metric queried. Use '-' to order in descending order. Example: '-psv99' let you order by descending PSV-99}
+\item{order_by}{Order performances by a metric queried. Use '-' to order in descending order. Example: '-psv99' let you order by descending PSV-99}
 
 \item{average_per}{Specify the normalization we want to use to compute physical metrics. Available values: match, p90, p60bip, p30tip, p30otip.}
 

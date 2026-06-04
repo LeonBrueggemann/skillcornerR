@@ -7,11 +7,11 @@
 get_skc_match(username, password, match_id = NULL)
 }
 \arguments{
-\item{username}{Character. Your SkillCorner API username.}
+\item{username}{Your SkillCorner API username.}
 
-\item{password}{Character. Your SkillCorner API password.}
+\item{password}{Your SkillCorner API password.}
 
-\item{match_id}{Character or Integer. The ID of the match.}
+\item{match_id}{The ID of the match.}
 }
 \value{
 A nested \code{list} containing full structural match data.

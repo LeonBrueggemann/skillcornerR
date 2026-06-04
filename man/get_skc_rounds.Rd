@@ -7,11 +7,11 @@
 get_skc_rounds(username, password, competition_id = NULL)
 }
 \arguments{
-\item{username}{Character. Your SkillCorner API username.}
+\item{username}{Your SkillCorner API username.}
 
-\item{password}{Character. Your SkillCorner API password.}
+\item{password}{Your SkillCorner API password.}
 
-\item{competition_id}{Character or Integer. The ID of the targeted competition.}
+\item{competition_id}{The ID of the targeted competition.}
 }
 \value{
 A \code{tibble} containing rounds metadata.

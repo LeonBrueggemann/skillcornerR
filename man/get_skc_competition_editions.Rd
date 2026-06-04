@@ -13,15 +13,15 @@ get_skc_competition_editions(
 )
 }
 \arguments{
-\item{username}{Character. Your SkillCorner API username.}
+\item{username}{Your SkillCorner API username.}
 
-\item{password}{Character. Your SkillCorner API password.}
+\item{password}{Your SkillCorner API password.}
 
-\item{lang}{Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").}
+\item{lang}{Language of the results. Available values: en, fr, es, de, zh_hans (default "en").}
 
-\item{user}{Logical or Character. Filters on authorization level of user. Default value: false}
+\item{user}{Filters on authorization level of user. Default value: false}
 
-\item{component_permission_for}{Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession}
+\item{component_permission_for}{Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession}
 }
 \value{
 A \code{tibble} containing competition editions metadata.

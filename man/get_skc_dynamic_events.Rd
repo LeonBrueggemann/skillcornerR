@@ -13,15 +13,15 @@ get_skc_dynamic_events(
 )
 }
 \arguments{
-\item{username}{Character. Your SkillCorner API username.}
+\item{username}{Your SkillCorner API username.}
 
-\item{password}{Character. Your SkillCorner API password.}
+\item{password}{Your SkillCorner API password.}
 
-\item{match_id}{Character or Integer. The ID of the targeted match.}
+\item{match_id}{The ID of the targeted match.}
 
-\item{ignore_dynamic_events_check}{Logical toggle setup constraints. WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.}
+\item{ignore_dynamic_events_check}{WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.}
 
-\item{data_version}{Integer. default: 2}
+\item{data_version}{default: 2}
 }
 \value{
 A structural parsed \code{data.frame}.

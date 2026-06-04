@@ -12,13 +12,13 @@ get_skc_match_metrics_player_possessions(
 )
 }
 \arguments{
-\item{username}{Character. Your SkillCorner API username.}
+\item{username}{Your SkillCorner API username.}
 
-\item{password}{Character. Your SkillCorner API password.}
+\item{password}{Your SkillCorner API password.}
 
 \item{include_metadata}{Whether to include metadata (e.g. names associated with IDs) in the response.}
 
-\item{match_id}{Character or Numeric string filter. SkillCorner Match ID.}
+\item{match_id}{SkillCorner Match ID.}
 }
 \value{
 A parsed context analysis framework metadata tabular \code{data.frame}.

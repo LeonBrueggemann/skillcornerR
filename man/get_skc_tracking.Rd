@@ -13,9 +13,9 @@ get_skc_tracking(
 )
 }
 \arguments{
-\item{username}{Character. Your SkillCorner API username.}
+\item{username}{Your SkillCorner API username.}
 
-\item{password}{Character. Your SkillCorner API password.}
+\item{password}{Your SkillCorner API password.}
 
 \item{file_format}{Must be jsonl.}
 
