@@ -7,7 +7,7 @@
 get_skc_competitions(
   username,
   password,
-  lang = "eng",
+  lang = "en",
   user = FALSE,
   component_permission_for = "all"
 )
@@ -17,11 +17,11 @@ get_skc_competitions(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{lang}{Character. Language code (default "eng").}
+\item{lang}{Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").}
 
-\item{user}{Logical or Character. Filter by user settings.}
+\item{user}{Logical or Character. Filters on authorization level of user. Default value: false}
 
-\item{component_permission_for}{Character. Component permissions filter.}
+\item{component_permission_for}{Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession}
 }
 \value{
 A \code{tibble} containing competitions metadata.

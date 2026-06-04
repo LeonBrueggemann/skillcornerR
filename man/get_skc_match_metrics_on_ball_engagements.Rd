@@ -2,13 +2,12 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_match_metrics_on_ball_engagements}
 \alias{get_skc_match_metrics_on_ball_engagements}
-\title{Get Match On-Ball Engagements Out-of-Possession Game Intelligence Metrics}
+\title{Get Match Game Intelligence Metrics - On Ball Engagements}
 \usage{
 get_skc_match_metrics_on_ball_engagements(
   username,
   password,
-  file_format = "jsonl",
-  data_version = 3,
+  include_metadata = NULL,
   match_id = NULL
 )
 }
@@ -17,15 +16,13 @@ get_skc_match_metrics_on_ball_engagements(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{file_format}{Structural file format format specification (Defaults to raw jsonl configuration context tracking).}
+\item{include_metadata}{Whether to include metadata (e.g. names associated with IDs) in the response.}
 
-\item{data_version}{Engine processing deployment mapping version pipeline.}
-
-\item{match_id}{Target numeric query identifier constraint profiles setup configuration.}
+\item{match_id}{Character or Numeric string filter. SkillCorner Match ID.}
 }
 \value{
 A formatted parsed structured analytical mapping \code{data.frame}.
 }
 \description{
-Extracts defensive phase out of possession tracking aggregations metrics indicators.
+Extracts full breadth match by match metrics datasets - On Ball Engagements
 }

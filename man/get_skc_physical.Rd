@@ -2,7 +2,7 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_physical}
 \alias{get_skc_physical}
-\title{Get SkillCorner Physical Tracking Aggregations}
+\title{Get SkillCorner Physical Aggregations}
 \usage{
 get_skc_physical(
   username,
@@ -37,51 +37,51 @@ get_skc_physical(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{season}{Character or Numeric string filter.}
+\item{season}{Character or Numeric string filter. SkillCorner Season ID(s).}
 
-\item{competition}{Character or Numeric string filter.}
+\item{competition}{Character or Numeric string filter. SkillCorner Competition ID(s).}
 
-\item{competition_edition}{Character or Numeric string filter.}
+\item{competition_edition}{Character or Numeric string filter. SkillCorner Competition Edition ID(s).}
 
-\item{match}{Character or Numeric string filter.}
+\item{match}{Character or Numeric string filter. SkillCorner Match ID(s).}
 
-\item{team}{Character or Numeric string filter.}
+\item{team}{Character or Numeric string filter. SkillCorner Team ID(s).}
 
-\item{player}{Character or Numeric string filter.}
+\item{player}{Character or Numeric string filter. SkillCorner Player ID(s).}
 
-\item{position}{Character filter.}
+\item{position}{Character filter. Player position acronym. Available values: LCB, CB, RCB, LWB, LB, RB, RWB, LDM, DM, RDM, LM, CM, RM, AM, LW, RW, LF, RF, CF}
 
-\item{position_group}{Character filter.}
+\item{position_group}{Character filter. Position group. Available values: CentralDefender, FullBack, Midfield, WideAttacker, CenterForward}
 
-\item{date__lte}{ISO date string format (<=).}
+\item{date__lte}{ISO date string format (<=). Match date before the date.}
 
-\item{date__gte}{ISO date string format (>=).}
+\item{date__gte}{ISO date string format (>=). Match date after the date.}
 
-\item{age__lte}{Numeric filter (<=).}
+\item{age__lte}{Numeric filter (<=). Exclude players older than this number.}
 
-\item{age__gte}{Numeric filter (>=).}
+\item{age__gte}{Numeric filter (>=). Exclude players younger than this number.}
 
-\item{playing_time__gte}{Numeric filter (>=).}
+\item{playing_time__gte}{Numeric filter (>=). Exclude match-player on which player played less than this number (in minutes).}
 
-\item{count_match__gte}{Numeric filter (>=).}
+\item{count_match__gte}{Numeric filter (>=). Exclude metrics computed based on less than this number of player matches.}
 
-\item{results}{Aggregations parameters context.}
+\item{results}{Character constraint. Result of the game. Available values: win, lose, draw}
 
-\item{venue}{Character constraint.}
+\item{venue}{Character constraint. home or/and away separated by comma.}
 
-\item{period}{Character constraint.}
+\item{period}{Character constraint. full or/and h1 or/and h2 separated by comma.}
 
-\item{possession}{Character constraint.}
+\item{possession}{Character constraint. all or/and tip or/and otip separated by comma.}
 
-\item{physical_check_passed}{Logical string constraint.}
+\item{physical_check_passed}{Logical string constraint. If physical_check_passed=true API returns only the performances that have passed the SkillCorner physical check. If physical_check_passed=false API returns only the performances that did not pass the SkillCorner physical check. If physical_check_passed=true,false returns all the performances.}
 
-\item{group_by}{Character query sorting groupings.}
+\item{group_by}{Character query sorting groupings. Specify the aggregation level you want. Available values : player, match, team, position_group, position, season, competition}
 
-\item{order_by}{Character query ordering string.}
+\item{order_by}{Character query ordering string. Order performances by a metric queried. Use '-' to order in descending order. Example: '-psv99' let you order by descending PSV-99}
 
-\item{response_format}{Enforces JSON data stream restriction.}
+\item{response_format}{Only JSON format allowed.}
 
-\item{average_per}{Character calculation mapping basis.}
+\item{average_per}{Specify the normalization we want to use to compute physical metrics. Available values: match, p90, p60bip, p30tip, p30otip.}
 }
 \value{
 A consolidated \code{data.frame}.

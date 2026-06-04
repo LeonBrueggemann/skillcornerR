@@ -2,7 +2,7 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_match_metrics_player_possessions}
 \alias{get_skc_match_metrics_player_possessions}
-\title{Get Match Individual Player Possessions Frame Metrics}
+\title{Get Match Game Intelligence Metrics - Player Possessions}
 \usage{
 get_skc_match_metrics_player_possessions(
   username,
@@ -16,13 +16,13 @@ get_skc_match_metrics_player_possessions(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{include_metadata}{Optional filters tracking setup structures parameter mapping indicators.}
+\item{include_metadata}{Whether to include metadata (e.g. names associated with IDs) in the response.}
 
-\item{match_id}{Character or Integer identifier match sequence index constraint mapping requirements.}
+\item{match_id}{Character or Numeric string filter. SkillCorner Match ID.}
 }
 \value{
 A parsed context analysis framework metadata tabular \code{data.frame}.
 }
 \description{
-Pulls game intelligence tracking configurations for specific user sequence constraints mapping allocations.
+Extracts full breadth match by match metrics datasets - Player Possessions
 }

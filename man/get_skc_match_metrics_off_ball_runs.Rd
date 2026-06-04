@@ -2,7 +2,7 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_match_metrics_off_ball_runs}
 \alias{get_skc_match_metrics_off_ball_runs}
-\title{Get Match Off-Ball Runs Game Intelligence Statistics}
+\title{Get Match Game Intelligence Metrics - Off-Ball Runs}
 \usage{
 get_skc_match_metrics_off_ball_runs(
   username,
@@ -16,13 +16,13 @@ get_skc_match_metrics_off_ball_runs(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{include_metadata}{Optional filters tracking setup structures parameter mapping indicators.}
+\item{include_metadata}{Whether to include metadata (e.g. names associated with IDs) in the response.}
 
-\item{match_id}{Character or Integer identifier match sequence index constraint mapping requirements.}
+\item{match_id}{Character or Numeric string filter. SkillCorner Match ID.}
 }
 \value{
 A metadata contextual log structured parsed evaluation data frame table pipeline.
 }
 \description{
-Extracts game intelligence statistical analytics targeted metrics tracking specific individual match identifiers.
+Extracts full breadth match by match metrics datasets - Off Ball Runs
 }

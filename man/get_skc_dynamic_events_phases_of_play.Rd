@@ -2,7 +2,7 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_dynamic_events_phases_of_play}
 \alias{get_skc_dynamic_events_phases_of_play}
-\title{Get SkillCorner Phases of Play Matrix Data}
+\title{Get SkillCorner Phases of Play Dynamic Events}
 \usage{
 get_skc_dynamic_events_phases_of_play(
   username,
@@ -17,15 +17,15 @@ get_skc_dynamic_events_phases_of_play(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{match_id}{Character or Integer. Target identifier constraints.}
+\item{match_id}{Character or Integer. The ID of the targeted match.}
 
-\item{ignore_dynamic_events_check}{Logical toggle setup constraints.}
+\item{ignore_dynamic_events_check}{Logical toggle setup constraints. WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.}
 
-\item{data_version}{API engine release pipeline version context tracking indicator (defaults to 2).}
+\item{data_version}{Integer. default: 2}
 }
 \value{
 A structured analytical tracking log frame context \code{data.frame}.
 }
 \description{
-Pulls tactical tracking phases segments timeline blocks mapped structural logs tracking profiles.
+Extracts match dynamic events filtered by Phases of Play.
 }

@@ -4,9 +4,9 @@
 #'
 #' @param username Character. Your SkillCorner API username.
 #' @param password Character. Your SkillCorner API password.
-#' @param lang Character. Language code (default "eng").
-#' @param user Logical or Character. Filter by user settings.
-#' @param component_permission_for Character. Component permissions filter.
+#' @param lang Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
+#' @param user Logical or Character. Filters on authorization level of user. Default value: false
+#' @param component_permission_for Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
 #' @return A \code{tibble} containing competition editions metadata.
 #' @export
@@ -18,7 +18,7 @@
 #' @importFrom dplyr bind_rows
 get_skc_competition_editions <- function(username,
                                          password,
-                                         lang = "eng",
+                                         lang = "en",
                                          user = FALSE,
                                          component_permission_for = "all") {
 
@@ -84,9 +84,9 @@ get_skc_competition_editions <- function(username,
 #'
 #' @param username Character. Your SkillCorner API username.
 #' @param password Character. Your SkillCorner API password.
-#' @param lang Character. Language code (default "eng").
-#' @param user Logical or Character. Filter by user settings.
-#' @param component_permission_for Character. Component permissions filter.
+#' @param lang Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
+#' @param user Logical or Character. Filters on authorization level of user. Default value: false
+#' @param component_permission_for Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
 #' @return A \code{tibble} containing competitions metadata.
 #' @export
@@ -98,7 +98,7 @@ get_skc_competition_editions <- function(username,
 #' @importFrom dplyr bind_rows
 get_skc_competitions <- function(username,
                                  password,
-                                 lang = "eng",
+                                 lang = "en",
                                  user = FALSE,
                                  component_permission_for = "all") {
 
@@ -165,9 +165,9 @@ get_skc_competitions <- function(username,
 #' @param username Character. Your SkillCorner API username.
 #' @param password Character. Your SkillCorner API password.
 #' @param competition_id Character or Integer. The ID of the targeted competition.
-#' @param lang Character. Language code (default "eng").
-#' @param user Logical or Character. Filter by user settings.
-#' @param component_permission_for Character. Component permissions filter.
+#' @param lang Character. Language of the results. Available values: en, fr, es, de, zh_hans (default "en").
+#' @param user Logical or Character. Filters on authorization level of user. Default value: false
+#' @param component_permission_for Character. Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
 #' @return A \code{tibble} containing specific competition editions metadata.
 #' @export
@@ -180,7 +180,7 @@ get_skc_competitions <- function(username,
 get_skc_editions <- function(username,
                              password,
                              competition_id = NULL,
-                             lang = "eng",
+                             lang = "en",
                              user = FALSE,
                              component_permission_for = "all") {
 
@@ -359,35 +359,35 @@ get_skc_match <- function(username,
   return(match_list)
 }
 
-#' Get SkillCorner Physical Tracking Aggregations
+#' Get SkillCorner Physical Aggregations
 #'
 #' Loops and extracts aggregated physical outputs filtering through optional metric dimensions.
 #'
 #' @param username Character. Your SkillCorner API username.
 #' @param password Character. Your SkillCorner API password.
-#' @param season Character or Numeric string filter.
-#' @param competition Character or Numeric string filter.
-#' @param competition_edition Character or Numeric string filter.
-#' @param match Character or Numeric string filter.
-#' @param team Character or Numeric string filter.
-#' @param player Character or Numeric string filter.
-#' @param position Character filter.
-#' @param position_group Character filter.
-#' @param date__lte ISO date string format (<=).
-#' @param date__gte ISO date string format (>=).
-#' @param age__lte Numeric filter (<=).
-#' @param age__gte Numeric filter (>=).
-#' @param playing_time__gte Numeric filter (>=).
-#' @param count_match__gte Numeric filter (>=).
-#' @param results Aggregations parameters context.
-#' @param venue Character constraint.
-#' @param period Character constraint.
-#' @param possession Character constraint.
-#' @param physical_check_passed Logical string constraint.
-#' @param group_by Character query sorting groupings.
-#' @param order_by Character query ordering string.
-#' @param response_format Enforces JSON data stream restriction.
-#' @param average_per Character calculation mapping basis.
+#' @param season Character or Numeric string filter. SkillCorner Season ID(s).
+#' @param competition Character or Numeric string filter. SkillCorner Competition ID(s).
+#' @param competition_edition Character or Numeric string filter. SkillCorner Competition Edition ID(s).
+#' @param match Character or Numeric string filter. SkillCorner Match ID(s).
+#' @param team Character or Numeric string filter. SkillCorner Team ID(s).
+#' @param player Character or Numeric string filter. SkillCorner Player ID(s).
+#' @param position Character filter. Player position acronym. Available values: LCB, CB, RCB, LWB, LB, RB, RWB, LDM, DM, RDM, LM, CM, RM, AM, LW, RW, LF, RF, CF
+#' @param position_group Character filter. Position group. Available values: CentralDefender, FullBack, Midfield, WideAttacker, CenterForward
+#' @param date__lte ISO date string format (<=). Match date before the date.
+#' @param date__gte ISO date string format (>=). Match date after the date.
+#' @param age__lte Numeric filter (<=). Exclude players older than this number.
+#' @param age__gte Numeric filter (>=). Exclude players younger than this number.
+#' @param playing_time__gte Numeric filter (>=). Exclude match-player on which player played less than this number (in minutes).
+#' @param count_match__gte Numeric filter (>=). Exclude metrics computed based on less than this number of player matches.
+#' @param results Character constraint. Result of the game. Available values: win, lose, draw
+#' @param venue Character constraint. home or/and away separated by comma.
+#' @param period Character constraint. full or/and h1 or/and h2 separated by comma.
+#' @param possession Character constraint. all or/and tip or/and otip separated by comma.
+#' @param physical_check_passed Logical string constraint. If physical_check_passed=true API returns only the performances that have passed the SkillCorner physical check. If physical_check_passed=false API returns only the performances that did not pass the SkillCorner physical check. If physical_check_passed=true,false returns all the performances.
+#' @param group_by Character query sorting groupings. Specify the aggregation level you want. Available values : player, match, team, position_group, position, season, competition
+#' @param order_by Character query ordering string. Order performances by a metric queried. Use '-' to order in descending order. Example: '-psv99' let you order by descending PSV-99
+#' @param response_format Only JSON format allowed.
+#' @param average_per Specify the normalization we want to use to compute physical metrics. Available values: match, p90, p60bip, p30tip, p30otip.
 #'
 #' @return A consolidated \code{data.frame}.
 #' @export
@@ -497,13 +497,13 @@ get_skc_physical <- function(username,
 
 #' Get SkillCorner Dynamic Events Data
 #'
-#' Extracts tabular data frames corresponding to structural match dynamic tracking events stream timelines.
+#' Extracts match dynamic events.
 #'
 #' @param username Character. Your SkillCorner API username.
 #' @param password Character. Your SkillCorner API password.
-#' @param match_id Character or Integer. Target identifier constraints.
-#' @param ignore_dynamic_events_check Logical toggle setup constraints.
-#' @param data_version API engine release pipeline version context tracking indicator (defaults to 2).
+#' @param match_id Character or Integer. The ID of the targeted match.
+#' @param ignore_dynamic_events_check Logical toggle setup constraints. WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.
+#' @param data_version Integer. default: 2
 #'
 #' @return A structural parsed \code{data.frame}.
 #' @export
@@ -562,9 +562,9 @@ get_skc_dynamic_events <- function(username,
   return(page_data)
 }
 
-#' Get SkillCorner Dynamic Off-Ball Runs Events
+#' Get SkillCorner Off-Ball Run Dynamic Events
 #'
-#' Extracts tabular dynamic tracking events specifically targeted for structural Off-Ball movements.
+#' Extracts match dynamic events filtered by Off Ball Runs.
 #'
 #' @inheritParams get_skc_dynamic_events
 #' @return A parsed \code{data.frame}.
@@ -624,9 +624,9 @@ get_skc_dynamic_events_off_ball_runs <- function(username,
   return(page_data)
 }
 
-#' Get SkillCorner On-Ball Engagements Events
+#' Get SkillCorner On-Ball Engagement Dynamic Events
 #'
-#' Fetches structural tabular outputs mapping match-specific on-ball sequence dynamics pipelines.
+#' Extracts match dynamic events filtered by On Ball Engagements.
 #'
 #' @inheritParams get_skc_dynamic_events
 #' @return A parsed \code{data.frame}.
@@ -686,9 +686,9 @@ get_skc_dynamic_events_on_ball_engagements <- function(username,
   return(page_data)
 }
 
-#' Get SkillCorner Passing Options Frame Streams
+#' Get SkillCorner Passing Options Dynamic Events
 #'
-#' Pulls technical structured passing options vectors associated with a specific singular event snapshot.
+#' Extracts match dynamic events filtered by Passing Options.
 #'
 #' @inheritParams get_skc_dynamic_events
 #' @return A matrix structured mapping \code{data.frame}.
@@ -748,9 +748,9 @@ get_skc_dynamic_events_passing_options <- function(username,
   return(page_data)
 }
 
-#' Get SkillCorner Phases of Play Matrix Data
+#' Get SkillCorner Phases of Play Dynamic Events
 #'
-#' Pulls tactical tracking phases segments timeline blocks mapped structural logs tracking profiles.
+#' Extracts match dynamic events filtered by Phases of Play.
 #'
 #' @inheritParams get_skc_dynamic_events
 #' @return A structured analytical tracking log frame context \code{data.frame}.
@@ -810,9 +810,9 @@ get_skc_dynamic_events_phases_of_play <- function(username,
   return(page_data)
 }
 
-#' Get SkillCorner Player Possessions Sequence Blocks
+#' Get SkillCorner Player Possessions Dynamic Events
 #'
-#' Pulls granular structural duration block logs context mapped individual assignments.
+#' Extracts match dynamic events filtered by Player Possessions.
 #'
 #' @inheritParams get_skc_dynamic_events
 #' @return An atomic tabular sequence frame logs tracking dashboard metrics log data frame structure.
@@ -872,14 +872,14 @@ get_skc_dynamic_events_player_possessions <- function(username,
   return(page_data)
 }
 
-#' Get Match Off-Ball Runs Game Intelligence Statistics
+#' Get Match Game Intelligence Metrics - Off-Ball Runs
 #'
-#' Extracts game intelligence statistical analytics targeted metrics tracking specific individual match identifiers.
+#' Extracts full breadth match by match metrics datasets - Off Ball Runs
 #'
 #' @param username Character. Your SkillCorner API username.
 #' @param password Character. Your SkillCorner API password.
-#' @param include_metadata Optional filters tracking setup structures parameter mapping indicators.
-#' @param match_id Character or Integer identifier match sequence index constraint mapping requirements.
+#' @param include_metadata Whether to include metadata (e.g. names associated with IDs) in the response.
+#' @param match_id Character or Numeric string filter. SkillCorner Match ID.
 #'
 #' @return A metadata contextual log structured parsed evaluation data frame table pipeline.
 #' @export
@@ -935,9 +935,9 @@ get_skc_match_metrics_off_ball_runs <- function(username,
   return(page_data)
 }
 
-#' Get Match In-Possession Passes Game Intelligence Statistics
+#' Get Match Game Intelligence Metrics - Passes
 #'
-#' Extracts game intelligence parsing mapping pass statistics dashboards for individual match parameters.
+#' Extracts full breadth match by match metrics datasets - Passes
 #'
 #' @inheritParams get_skc_match_metrics_off_ball_runs
 #' @return A parsed \code{data.frame}.
@@ -994,9 +994,9 @@ get_skc_match_metrics_passes <- function(username,
   return(page_data)
 }
 
-#' Get Match Passing Options Analytical Statistics
+#' Get Match Game Intelligence Metrics - Passing Options
 #'
-#' Pulls aggregated frame parsing metadata logs tracking game intelligence dashboards mapping configuration.
+#' Extracts full breadth match by match metrics datasets - Passing Options
 #'
 #' @inheritParams get_skc_match_metrics_off_ball_runs
 #' @return A parsed structural data tracking \code{data.frame}.
@@ -1053,9 +1053,9 @@ get_skc_match_metrics_passing_options <- function(username,
   return(page_data)
 }
 
-#' Get Match Individual Player Possessions Frame Metrics
+#' Get Match Game Intelligence Metrics - Player Possessions
 #'
-#' Pulls game intelligence tracking configurations for specific user sequence constraints mapping allocations.
+#' Extracts full breadth match by match metrics datasets - Player Possessions
 #'
 #' @inheritParams get_skc_match_metrics_off_ball_runs
 #' @return A parsed context analysis framework metadata tabular \code{data.frame}.
@@ -1112,15 +1112,11 @@ get_skc_match_metrics_player_possessions <- function(username,
   return(page_data)
 }
 
-#' Get Match On-Ball Engagements Out-of-Possession Game Intelligence Metrics
+#' Get Match Game Intelligence Metrics - On Ball Engagements
 #'
-#' Extracts defensive phase out of possession tracking aggregations metrics indicators.
+#' Extracts full breadth match by match metrics datasets - On Ball Engagements
 #'
-#' @param username Character. Your SkillCorner API username.
-#' @param password Character. Your SkillCorner API password.
-#' @param file_format Structural file format format specification (Defaults to raw jsonl configuration context tracking).
-#' @param data_version Engine processing deployment mapping version pipeline.
-#' @param match_id Target numeric query identifier constraint profiles setup configuration.
+#' @inheritParams get_skc_match_metrics_off_ball_runs
 #'
 #' @return A formatted parsed structured analytical mapping \code{data.frame}.
 #' @export
@@ -1129,66 +1125,62 @@ get_skc_match_metrics_player_possessions <- function(username,
 #' @importFrom httr modify_url GET status_code headers http_type content authenticate
 get_skc_match_metrics_on_ball_engagements <- function(username,
                                                       password,
-                                                      file_format = "jsonl",
-                                                      data_version = 3,
+                                                      include_metadata = NULL,
                                                       match_id = NULL) {
 
-  if (is.null(match_id)) {
-    stop("Error: Please provide a valid match_id.")
+    if (is.null(match_id)) {
+      stop("Error: Please provide a valid match_id.")
+    }
+
+    base_url <- 'https://skillcorner.com/api/match/'
+    url <- paste0(base_url, match_id, "/metrics/game_intelligence/out_of_possession/on_ball_engagements/")
+
+    query_params <- list(
+      include_metadata = include_metadata
+    )
+
+    query_params <- purrr::compact(query_params)
+    current_url <- httr::modify_url(url, query = query_params)
+
+    response <- httr::GET(current_url, httr::authenticate(username, password, type = "basic"))
+
+    if (httr::status_code(response) != 200) {
+      warning(paste("Error retrieving URL:", current_url, "Status Code:", httr::status_code(response)))
+      return(data.frame())
+    }
+
+    if (httr::headers(response)$`content-type` == "application/x-gzip" ||
+        httr::http_type(response) == "application/octet-stream") {
+      raw_content <- httr::content(response, as = "raw")
+      parsed_text <- memDecompress(raw_content, type = "gzip", asChar = TRUE)
+    } else {
+      parsed_text <- httr::content(response, as = "text", encoding = "UTF-8")
+    }
+
+    page_data <- tryCatch({
+      utils::read.csv(text = parsed_text, sep = ",", header = TRUE, stringsAsFactors = FALSE)
+    }, error = function(e) {
+      warning("Parsing CSV data failed.")
+      return(data.frame())
+    })
+
+    if (nrow(page_data) == 0) {
+      warning(paste("No events found for match_id", match_id, ". Check the ID or the 'data_version' argument."))
+      return(data.frame())
+    }
+
+    return(page_data)
   }
-
-  base_url <- 'https://skillcorner.com/api/match/'
-  url <- paste0(base_url, match_id, "/metrics/game_intelligence/out_of_possession/on_ball_engagements/")
-
-  # Note: The original code context referred to 'include_metadata' which was missing in function signature.
-  # Handled safely by leveraging standard signature mapping structures parameter profiles.
-  query_params <- list(
-    file_format = file_format,
-    data_version = data_version
-  )
-
-  query_params <- purrr::compact(query_params)
-  current_url <- httr::modify_url(url, query = query_params)
-
-  response <- httr::GET(current_url, httr::authenticate(username, password, type = "basic"))
-
-  if (httr::status_code(response) != 200) {
-    warning(paste("Error retrieving URL:", current_url, "Status Code:", httr::status_code(response)))
-    return(data.frame())
-  }
-
-  if (httr::headers(response)$`content-type` == "application/x-gzip" ||
-      httr::http_type(response) == "application/octet-stream") {
-    raw_content <- httr::content(response, as = "raw")
-    parsed_text <- memDecompress(raw_content, type = "gzip", asChar = TRUE)
-  } else {
-    parsed_text <- httr::content(response, as = "text", encoding = "UTF-8")
-  }
-
-  page_data <- tryCatch({
-    utils::read.csv(text = parsed_text, sep = ",", header = TRUE, stringsAsFactors = FALSE)
-  }, error = function(e) {
-    warning("Parsing CSV data failed.")
-    return(data.frame())
-  })
-
-  if (nrow(page_data) == 0) {
-    warning(paste("No events found for match_id", match_id, ". Check the ID or the 'data_version' argument."))
-    return(data.frame())
-  }
-
-  return(page_data)
-}
 
 #' Get Raw SkillCorner JSONL Tracking Data Streams
 #'
-#' Pulls streaming coordinate sequences using specific line parsing tools into an unsimplified list.
+#' Pulls SkillCorner Tracking Data in large list format.
 #'
 #' @param username Character. Your SkillCorner API username.
 #' @param password Character. Your SkillCorner API password.
-#' @param file_format Character tracking restrictions constraint profile validations (Enforces JSONL constraint targets).
-#' @param data_version API technical backend layout layout architecture pipelines version parameters mapping tracker.
-#' @param match_id Match sequence numeric configuration locator indicators.
+#' @param file_format Must be jsonl.
+#' @param data_version Version of the data to download. Version 3 is the current version. Available values : 3
+#' @param match_id SkillCorner Match ID.
 #'
 #' @return A raw nested \code{list} block mapping full coordinate positional updates data sets.
 #' @export
@@ -1262,9 +1254,9 @@ get_skc_tracking <- function(username,
   return(page_data)
 }
 
-#' Get Global Macro Game Intelligence Off-Ball Runs Metrics
+#' Get Game Intelligence Off-Ball Runs Metrics
 #'
-#' Loops through pagination endpoints pulling dynamic macro data frames across general tracking dimensions.
+#' Pulls Game Intellience metrics handling pagination - Off Ball Runs
 #'
 #' @inheritParams get_skc_physical
 #' @param performance_included_count__gte Numeric context filter indicator constraints setup.
@@ -1393,9 +1385,9 @@ get_skc_metrics_off_ball_runs <- function(username,
   return(dplyr::bind_rows(all_results))
 }
 
-#' Get Global Macro Game Intelligence In-Possession Passes Metrics
+#' Get Game Intelligence Pass Metrics
 #'
-#' Loops through pagination endpoints pulling dynamic macro performance charts across passing metrics parameters.
+#' Pulls Game Intellience metrics handling pagination - Passes
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
 #' @return A comprehensive consolidated \code{data.frame}.
@@ -1519,9 +1511,9 @@ get_skc_metrics_passes <- function(username,
   return(dplyr::bind_rows(all_results))
 }
 
-#' Get Global Macro Passing Options Macro Analytical Metrics
+#' Get Game Intelligence Passing Option Metrics
 #'
-#' Loops through pagination endpoints extraction algorithms capturing macro profiles evaluation data.
+#' Pulls Game Intellience metrics handling pagination - Passing Options
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
 #' @return A aggregated context \code{data.frame}.
@@ -1645,9 +1637,9 @@ get_skc_metrics_passing_options <- function(username,
   return(dplyr::bind_rows(all_results))
 }
 
-#' Get Global Macro Player Possessions Analytical Tracking Metrics
+#' Get Game Intelligence Player Possession Metrics
 #'
-#' Loops through pagination endpoints tracking global query configuration blocks across general player parameters maps.
+#' Pulls Game Intellience metrics handling pagination - Player Possessions
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
 #' @return A comprehensive tabular metrics evaluation \code{data.frame}.
@@ -1771,9 +1763,9 @@ get_skc_metrics_player_possessions <- function(username,
   return(dplyr::bind_rows(all_results))
 }
 
-#' Get Global Macro On-Ball Engagements Out-of-Possession Metrics
+#' Get Game Intelligence On Ball Engagement Metrics
 #'
-#' Loops through pagination endpoints pulling analytical structured macro datasets tracking defensive variables.
+#' Pulls Game Intellience metrics handling pagination - On Ball Engagements
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
 #' @return A formatted aggregated context macro \code{data.frame}.

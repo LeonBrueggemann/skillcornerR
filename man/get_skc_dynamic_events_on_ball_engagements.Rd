@@ -2,7 +2,7 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_dynamic_events_on_ball_engagements}
 \alias{get_skc_dynamic_events_on_ball_engagements}
-\title{Get SkillCorner On-Ball Engagements Events}
+\title{Get SkillCorner On-Ball Engagement Dynamic Events}
 \usage{
 get_skc_dynamic_events_on_ball_engagements(
   username,
@@ -17,15 +17,15 @@ get_skc_dynamic_events_on_ball_engagements(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{match_id}{Character or Integer. Target identifier constraints.}
+\item{match_id}{Character or Integer. The ID of the targeted match.}
 
-\item{ignore_dynamic_events_check}{Logical toggle setup constraints.}
+\item{ignore_dynamic_events_check}{Logical toggle setup constraints. WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.}
 
-\item{data_version}{API engine release pipeline version context tracking indicator (defaults to 2).}
+\item{data_version}{Integer. default: 2}
 }
 \value{
 A parsed \code{data.frame}.
 }
 \description{
-Fetches structural tabular outputs mapping match-specific on-ball sequence dynamics pipelines.
+Extracts match dynamic events filtered by On Ball Engagements.
 }

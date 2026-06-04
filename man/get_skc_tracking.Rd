@@ -17,15 +17,15 @@ get_skc_tracking(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{file_format}{Character tracking restrictions constraint profile validations (Enforces JSONL constraint targets).}
+\item{file_format}{Must be jsonl.}
 
-\item{data_version}{API technical backend layout layout architecture pipelines version parameters mapping tracker.}
+\item{data_version}{Version of the data to download. Version 3 is the current version. Available values : 3}
 
-\item{match_id}{Match sequence numeric configuration locator indicators.}
+\item{match_id}{SkillCorner Match ID.}
 }
 \value{
 A raw nested \code{list} block mapping full coordinate positional updates data sets.
 }
 \description{
-Pulls streaming coordinate sequences using specific line parsing tools into an unsimplified list.
+Pulls SkillCorner Tracking Data in large list format.
 }

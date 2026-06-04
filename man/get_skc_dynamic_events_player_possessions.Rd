@@ -2,7 +2,7 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_dynamic_events_player_possessions}
 \alias{get_skc_dynamic_events_player_possessions}
-\title{Get SkillCorner Player Possessions Sequence Blocks}
+\title{Get SkillCorner Player Possessions Dynamic Events}
 \usage{
 get_skc_dynamic_events_player_possessions(
   username,
@@ -17,15 +17,15 @@ get_skc_dynamic_events_player_possessions(
 
 \item{password}{Character. Your SkillCorner API password.}
 
-\item{match_id}{Character or Integer. Target identifier constraints.}
+\item{match_id}{Character or Integer. The ID of the targeted match.}
 
-\item{ignore_dynamic_events_check}{Logical toggle setup constraints.}
+\item{ignore_dynamic_events_check}{Logical toggle setup constraints. WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.}
 
-\item{data_version}{API engine release pipeline version context tracking indicator (defaults to 2).}
+\item{data_version}{Integer. default: 2}
 }
 \value{
 An atomic tabular sequence frame logs tracking dashboard metrics log data frame structure.
 }
 \description{
-Pulls granular structural duration block logs context mapped individual assignments.
+Extracts match dynamic events filtered by Player Possessions.
 }
