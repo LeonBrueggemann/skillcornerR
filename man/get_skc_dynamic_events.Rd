@@ -2,7 +2,7 @@
 % Please edit documentation in R/skillcorner_api_access.R
 \name{get_skc_dynamic_events}
 \alias{get_skc_dynamic_events}
-\title{Get SkillCorner Dynamic Events Data}
+\title{Get SkillCorner Dynamic Events}
 \usage{
 get_skc_dynamic_events(
   username,

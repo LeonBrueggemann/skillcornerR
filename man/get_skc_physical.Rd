@@ -29,7 +29,8 @@ get_skc_physical(
   group_by = NULL,
   order_by = NULL,
   response_format = NULL,
-  average_per = NULL
+  average_per = NULL,
+  data_version = NULL
 )
 }
 \arguments{
@@ -82,6 +83,8 @@ get_skc_physical(
 \item{response_format}{Only JSON format allowed.}
 
 \item{average_per}{Specify the normalization we want to use to compute physical metrics. Available values: match, p90, p60bip, p30tip, p30otip.}
+
+\item{data_version}{Specify the Version of Physical Data. From July 20th 2026 on it will be Version 3.0.3 incroporating Peak Speed and Women's Threshold. For now you have to specify it.}
 }
 \value{
 A consolidated \code{data.frame}.
