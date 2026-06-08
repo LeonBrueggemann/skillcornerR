@@ -86,9 +86,6 @@ get_skc_physical(
 
 \item{data_version}{Specify the Version of Physical Data. From July 20th 2026 on it will be Version 3.0.3 incroporating Peak Speed and Women's Threshold. For now you have to specify it.}
 }
-\value{
-A consolidated \code{data.frame}.
-}
 \description{
 Loops and extracts aggregated physical outputs filtering through optional metric dimensions.
 }

@@ -23,9 +23,6 @@ get_skc_dynamic_events_phases_of_play(
 
 \item{data_version}{default: 2}
 }
-\value{
-A structured analytical tracking log frame context \code{data.frame}.
-}
 \description{
 Extracts match dynamic events filtered by Phases of Play.
 }

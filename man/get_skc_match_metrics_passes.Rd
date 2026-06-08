@@ -20,9 +20,6 @@ get_skc_match_metrics_passes(
 
 \item{match_id}{SkillCorner Match ID.}
 }
-\value{
-A parsed \code{data.frame}.
-}
 \description{
 Extracts full breadth match by match metrics datasets - Passes
 }

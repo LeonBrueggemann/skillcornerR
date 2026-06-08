@@ -23,9 +23,6 @@ get_skc_dynamic_events_off_ball_runs(
 
 \item{data_version}{default: 2}
 }
-\value{
-A parsed \code{data.frame}.
-}
 \description{
 Extracts match dynamic events filtered by Off Ball Runs.
 }

@@ -23,9 +23,6 @@ get_skc_dynamic_events_passing_options(
 
 \item{data_version}{default: 2}
 }
-\value{
-A matrix structured mapping \code{data.frame}.
-}
 \description{
 Extracts match dynamic events filtered by Passing Options.
 }

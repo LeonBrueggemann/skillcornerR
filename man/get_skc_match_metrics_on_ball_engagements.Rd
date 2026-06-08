@@ -20,9 +20,6 @@ get_skc_match_metrics_on_ball_engagements(
 
 \item{match_id}{SkillCorner Match ID.}
 }
-\value{
-A formatted parsed structured analytical mapping \code{data.frame}.
-}
 \description{
 Extracts full breadth match by match metrics datasets - On Ball Engagements
 }

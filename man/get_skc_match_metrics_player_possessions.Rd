@@ -20,9 +20,6 @@ get_skc_match_metrics_player_possessions(
 
 \item{match_id}{SkillCorner Match ID.}
 }
-\value{
-A parsed context analysis framework metadata tabular \code{data.frame}.
-}
 \description{
 Extracts full breadth match by match metrics datasets - Player Possessions
 }

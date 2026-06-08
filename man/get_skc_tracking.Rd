@@ -23,9 +23,6 @@ get_skc_tracking(
 
 \item{match_id}{SkillCorner Match ID.}
 }
-\value{
-A raw nested \code{list} block mapping full coordinate positional updates data sets.
-}
 \description{
 Pulls SkillCorner Tracking Data in large list format.
 }

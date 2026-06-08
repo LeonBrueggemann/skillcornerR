@@ -80,9 +80,6 @@ get_skc_metrics_off_ball_runs(
 
 \item{variants}{Setup evaluation indicators mappings context constraint blocks tracking targets.}
 }
-\value{
-A comprehensive \code{data.frame}.
-}
 \description{
 Pulls Game Intellience metrics handling pagination - Off Ball Runs
 }

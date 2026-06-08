@@ -8,7 +8,6 @@
 #' @param user Filters on authorization level of user. Default value: false
 #' @param component_permission_for Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
-#' @return A \code{tibble} containing competition editions metadata.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -88,7 +87,6 @@ get_skc_competition_editions <- function(username,
 #' @param user Filters on authorization level of user. Default value: false
 #' @param component_permission_for Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
-#' @return A \code{tibble} containing competitions metadata.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -169,7 +167,6 @@ get_skc_competitions <- function(username,
 #' @param user Filters on authorization level of user. Default value: false
 #' @param component_permission_for Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession
 #'
-#' @return A \code{tibble} containing specific competition editions metadata.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -249,7 +246,6 @@ get_skc_editions <- function(username,
 #' @param password Your SkillCorner API password.
 #' @param competition_id The ID of the targeted competition.
 #'
-#' @return A \code{tibble} containing rounds metadata.
 #' @export
 #'
 #' @importFrom httr modify_url GET status_code headers http_type content authenticate
@@ -317,7 +313,6 @@ get_skc_rounds <- function(username,
 #' @param password Your SkillCorner API password.
 #' @param match_id The ID of the match.
 #'
-#' @return A nested \code{list} containing full structural match data.
 #' @export
 #'
 #' @importFrom httr modify_url GET status_code headers http_type content authenticate
@@ -390,7 +385,6 @@ get_skc_match <- function(username,
 #' @param date_time__gte Filter matches with date_time on or after this date.
 #' @param date_time__lte Filter matches with date_time on or before this date.
 #'
-#' @return A \code{tibble} containing matches metadata.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -510,7 +504,6 @@ get_skc_matches <- function(username,
 #' @param password Your SkillCorner API password.
 #' @param match_id The ID of the targeted match.
 #'
-#' @return A structural parsed \code{data.frame}.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -593,7 +586,6 @@ get_skc_data_collection <- function(username,
 #' @param average_per Specify the normalization we want to use to compute physical metrics. Available values: match, p90, p60bip, p30tip, p30otip.
 #' @param data_version Specify the Version of Physical Data. From July 20th 2026 on it will be Version 3.0.3 incroporating Peak Speed and Women's Threshold. For now you have to specify it.
 #'
-#' @return A consolidated \code{data.frame}.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -711,7 +703,6 @@ get_skc_physical <- function(username,
 #' @param ignore_dynamic_events_check WARNING! Setting this parameter to true enables access to Dynamic Events even if the Dynamic Event quality check has not been passed for the match. By doing so, you may receive data that does not meet our usual quality standards.
 #' @param data_version default: 2
 #'
-#' @return A structural parsed \code{data.frame}.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -773,7 +764,6 @@ get_skc_dynamic_events <- function(username,
 #' Extracts match dynamic events filtered by Off Ball Runs.
 #'
 #' @inheritParams get_skc_dynamic_events
-#' @return A parsed \code{data.frame}.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -835,7 +825,7 @@ get_skc_dynamic_events_off_ball_runs <- function(username,
 #' Extracts match dynamic events filtered by On Ball Engagements.
 #'
 #' @inheritParams get_skc_dynamic_events
-#' @return A parsed \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -897,7 +887,7 @@ get_skc_dynamic_events_on_ball_engagements <- function(username,
 #' Extracts match dynamic events filtered by Passing Options.
 #'
 #' @inheritParams get_skc_dynamic_events
-#' @return A matrix structured mapping \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -959,7 +949,7 @@ get_skc_dynamic_events_passing_options <- function(username,
 #' Extracts match dynamic events filtered by Phases of Play.
 #'
 #' @inheritParams get_skc_dynamic_events
-#' @return A structured analytical tracking log frame context \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1021,7 +1011,7 @@ get_skc_dynamic_events_phases_of_play <- function(username,
 #' Extracts match dynamic events filtered by Player Possessions.
 #'
 #' @inheritParams get_skc_dynamic_events
-#' @return An atomic tabular sequence frame logs tracking dashboard metrics log data frame structure.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1087,7 +1077,6 @@ get_skc_dynamic_events_player_possessions <- function(username,
 #' @param include_metadata Whether to include metadata (e.g. names associated with IDs) in the response.
 #' @param match_id SkillCorner Match ID.
 #'
-#' @return A metadata contextual log structured parsed evaluation data frame table pipeline.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1146,7 +1135,7 @@ get_skc_match_metrics_off_ball_runs <- function(username,
 #' Extracts full breadth match by match metrics datasets - Passes
 #'
 #' @inheritParams get_skc_match_metrics_off_ball_runs
-#' @return A parsed \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1205,7 +1194,7 @@ get_skc_match_metrics_passes <- function(username,
 #' Extracts full breadth match by match metrics datasets - Passing Options
 #'
 #' @inheritParams get_skc_match_metrics_off_ball_runs
-#' @return A parsed structural data tracking \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1264,7 +1253,7 @@ get_skc_match_metrics_passing_options <- function(username,
 #' Extracts full breadth match by match metrics datasets - Player Possessions
 #'
 #' @inheritParams get_skc_match_metrics_off_ball_runs
-#' @return A parsed context analysis framework metadata tabular \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1324,7 +1313,6 @@ get_skc_match_metrics_player_possessions <- function(username,
 #'
 #' @inheritParams get_skc_match_metrics_off_ball_runs
 #'
-#' @return A formatted parsed structured analytical mapping \code{data.frame}.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1388,7 +1376,6 @@ get_skc_match_metrics_on_ball_engagements <- function(username,
 #' @param data_version Version of the data to download. Version 3 is the current version. Available values : 3
 #' @param match_id SkillCorner Match ID.
 #'
-#' @return A raw nested \code{list} block mapping full coordinate positional updates data sets.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1470,7 +1457,6 @@ get_skc_tracking <- function(username,
 #' @param result Filter character results vectors context requirements constraints mapping.
 #' @param variants Setup evaluation indicators mappings context constraint blocks tracking targets.
 #'
-#' @return A comprehensive \code{data.frame}.
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1596,7 +1582,7 @@ get_skc_metrics_off_ball_runs <- function(username,
 #' Pulls Game Intellience metrics handling pagination - Passes
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
-#' @return A comprehensive consolidated \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1722,7 +1708,7 @@ get_skc_metrics_passes <- function(username,
 #' Pulls Game Intellience metrics handling pagination - Passing Options
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
-#' @return A aggregated context \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1848,7 +1834,7 @@ get_skc_metrics_passing_options <- function(username,
 #' Pulls Game Intellience metrics handling pagination - Player Possessions
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
-#' @return A comprehensive tabular metrics evaluation \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact
@@ -1974,7 +1960,7 @@ get_skc_metrics_player_possessions <- function(username,
 #' Pulls Game Intellience metrics handling pagination - On Ball Engagements
 #'
 #' @inheritParams get_skc_metrics_off_ball_runs
-#' @return A formatted aggregated context macro \code{data.frame}.
+#'
 #' @export
 #'
 #' @importFrom purrr compact

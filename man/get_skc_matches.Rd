@@ -86,9 +86,6 @@ get_skc_matches(
 
 \item{lang}{Language of the results. Available values: en, fr, es, de, zh_hans (default "en").}
 }
-\value{
-A \code{tibble} containing matches metadata.
-}
 \description{
 Retrieves a data frame of matches from the SkillCorner API.
 }

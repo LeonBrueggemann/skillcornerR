@@ -80,9 +80,6 @@ get_skc_metrics_player_possessions(
 
 \item{variants}{Setup evaluation indicators mappings context constraint blocks tracking targets.}
 }
-\value{
-A comprehensive tabular metrics evaluation \code{data.frame}.
-}
 \description{
 Pulls Game Intellience metrics handling pagination - Player Possessions
 }

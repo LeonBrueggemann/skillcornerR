@@ -13,9 +13,6 @@ get_skc_match(username, password, match_id = NULL)
 
 \item{match_id}{The ID of the match.}
 }
-\value{
-A nested \code{list} containing full structural match data.
-}
 \description{
 Fetches raw unsimplified nested list data for a single specific match metadata from the SkillCorner API.
 }

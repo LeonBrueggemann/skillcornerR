@@ -13,9 +13,6 @@ get_skc_rounds(username, password, competition_id = NULL)
 
 \item{competition_id}{The ID of the targeted competition.}
 }
-\value{
-A \code{tibble} containing rounds metadata.
-}
 \description{
 Retrieves a data frame of rounds for a specific competition ID from the SkillCorner API.
 }

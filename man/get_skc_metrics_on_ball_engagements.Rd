@@ -80,9 +80,6 @@ get_skc_metrics_on_ball_engagements(
 
 \item{variants}{Setup evaluation indicators mappings context constraint blocks tracking targets.}
 }
-\value{
-A formatted aggregated context macro \code{data.frame}.
-}
 \description{
 Pulls Game Intellience metrics handling pagination - On Ball Engagements
 }

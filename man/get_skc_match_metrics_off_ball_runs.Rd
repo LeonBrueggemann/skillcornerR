@@ -20,9 +20,6 @@ get_skc_match_metrics_off_ball_runs(
 
 \item{match_id}{SkillCorner Match ID.}
 }
-\value{
-A metadata contextual log structured parsed evaluation data frame table pipeline.
-}
 \description{
 Extracts full breadth match by match metrics datasets - Off Ball Runs
 }

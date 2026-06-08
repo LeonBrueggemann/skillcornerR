@@ -23,9 +23,6 @@ get_skc_dynamic_events_player_possessions(
 
 \item{data_version}{default: 2}
 }
-\value{
-An atomic tabular sequence frame logs tracking dashboard metrics log data frame structure.
-}
 \description{
 Extracts match dynamic events filtered by Player Possessions.
 }

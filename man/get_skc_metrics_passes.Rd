@@ -80,9 +80,6 @@ get_skc_metrics_passes(
 
 \item{variants}{Setup evaluation indicators mappings context constraint blocks tracking targets.}
 }
-\value{
-A comprehensive consolidated \code{data.frame}.
-}
 \description{
 Pulls Game Intellience metrics handling pagination - Passes
 }

@@ -23,9 +23,6 @@ get_skc_competition_editions(
 
 \item{component_permission_for}{Filters on authorization level of user for a specific component. Available values : all, physical, tracking, gi_in_possession, gi_out_of_possession}
 }
-\value{
-A \code{tibble} containing competition editions metadata.
-}
 \description{
 Retrieves a data frame of competition editions from the SkillCorner API.
 }

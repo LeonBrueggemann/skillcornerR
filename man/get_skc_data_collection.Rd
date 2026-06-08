@@ -13,9 +13,6 @@ get_skc_data_collection(username, password, match_id = NULL)
 
 \item{match_id}{The ID of the targeted match.}
 }
-\value{
-A structural parsed \code{data.frame}.
-}
 \description{
 Extracts match data collection
 }

@@ -20,9 +20,6 @@ get_skc_match_metrics_passing_options(
 
 \item{match_id}{SkillCorner Match ID.}
 }
-\value{
-A parsed structural data tracking \code{data.frame}.
-}
 \description{
 Extracts full breadth match by match metrics datasets - Passing Options
 }

@@ -23,9 +23,6 @@ get_skc_dynamic_events(
 
 \item{data_version}{default: 2}
 }
-\value{
-A structural parsed \code{data.frame}.
-}
 \description{
 Extracts match dynamic events.
 }

@@ -80,9 +80,6 @@ get_skc_metrics_passing_options(
 
 \item{variants}{Setup evaluation indicators mappings context constraint blocks tracking targets.}
 }
-\value{
-A aggregated context \code{data.frame}.
-}
 \description{
 Pulls Game Intellience metrics handling pagination - Passing Options
 }
