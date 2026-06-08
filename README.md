@@ -65,9 +65,9 @@ Once loaded, you can check the documentation and parameters for any function dir
 * `get_skc_competition_editions()`
 * `get_skc_editions()`
 * `get_skc_rounds()`
-* `get_skc_matches()` - coming soon
+* `get_skc_matches()`
 * `get_skc_match()`
-* `get_skc_data_collection()` - coming soon
+* `get_skc_data_collection()`
 
 ### 2. Raw Tracking & Physical Aggregations
 
